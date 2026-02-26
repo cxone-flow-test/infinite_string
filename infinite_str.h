@@ -4,8 +4,11 @@
 class InfiniteString
 {
   private:
-  int m_size;
+  size_t m_size;
+  char* m_pos;
   char* m_buf;
+
+  void expand_buf_to(size_t sz);
 
   public:
   
