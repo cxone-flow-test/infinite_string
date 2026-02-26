@@ -1,7 +1,14 @@
 #ifndef __INFINITE_STR_H__
 #define __INFINITE_STR_H__
 
-class InfiniteString
+#ifdef SHARED
+  #define ATTR __attribute__((visibility("default")))
+#else
+  #define ATTR 
+#endif
+
+
+class ATTR InfiniteString
 {
   private:
   size_t m_size;
@@ -19,8 +26,6 @@ class InfiniteString
     InfiniteString& operator+=(const char* rhs);
 
     const char* c_str();
-
-
 };
 
 
